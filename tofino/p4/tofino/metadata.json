@@ -1,0 +1,35 @@
+{
+    "ingress": {
+        "ingress_port_source": ["ig_intr_md.ingress_port",null],
+        
+        "egress_unicast_port": ["ig_intr_md_for_tm.ucast_egress_port",null],
+        "drop_ctl": ["ig_intr_md_for_tm.drop_ctl",0],
+        "copy_to_cpu": ["ig_intr_md_for_tm.copy_to_cpu",0],
+        "egress_multicast_group_0": ["ig_intr_md_for_tm.mcast_grp_a",null],
+        "egress_multicast_group_1": ["ig_intr_md_for_tm.mcast_grp_b",null],
+        "hash_lag_ecmp_mcast_0": ["ig_intr_md_for_tm.level1_mcast_hash",0],
+        "hash_lag_ecmp_mcast_1": ["ig_intr_md_for_tm.level2_mcast_hash",0],
+        "copy_to_cpu_cos": ["ig_intr_md_for_tm.icos_for_copy_to_cpu",0],
+        "deflect_on_drop": ["ig_intr_md_for_tm.deflect_on_drop",0],
+        "meter_color": ["ig_intr_md_for_tm.packet_color",0],
+        "icos": ["ig_intr_md_for_tm.ingress_cos",0],
+        "qid": ["ig_intr_md_for_tm.qid",0],
+        "xid": ["ig_intr_md_for_tm.level1_exclusion_id",0],
+        "yid": ["ig_intr_md_for_tm.level2_exclusion_id",0],
+        "rid": ["ig_intr_md_for_tm.rid",0],
+        "warp": ["ig_intr_md_for_tm.bypass_egress",0],
+        "ct_disable" : ["ig_intr_md_for_tm.disable_ucast_cutthru",0],
+        "ct_mcast" : ["ig_intr_md_for_tm.enable_mcast_cutthru",0]
+    },
+    "egress": {
+        "egress_unicast_port": ["eg_intr_md.egress_port",null],
+        "ecos": ["eg_intr_md.egress_cos",0],
+        
+        "coal": ["eg_intr_md_for_mb.coalesce_length",0],
+
+        "force_tx_err": ["eg_intr_md_for_oport.force_tx_error",0],
+        "tx_pkt_has_offsets": ["eg_intr_md_for_oport.update_delay_on_tx",0],
+        "capture_tx_ts": ["eg_intr_md_for_oport.capture_tstamp_on_tx",0],
+        "drop_ctl": ["eg_intr_md_for_oport.drop_ctl",0]
+    }
+}
