@@ -114,6 +114,7 @@ main_loop(void)
 
 					struct ether_hdr* eth = rte_pktmbuf_mtod(m, struct ether_hdr*);
 					struct diagnosis_hdr* diagnosis = rte_pktmbuf_mtod_offset(m, struct diagnosis_hdr*, sizeof(struct ether_hdr));
+					if (diagnosis->proto != 6 && diagnosis->proto != 17) continue;
 					fprintf(ptr, "%lu %lu %lu %lu %lu\n", diagnosis->srcIP, diagnosis->dstIP, diagnosis->proto, diagnosis->srcPort, diagnosis->dstPort);
 
 					rte_pktmbuf_free(m);
